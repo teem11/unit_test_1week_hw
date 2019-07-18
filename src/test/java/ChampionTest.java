@@ -39,6 +39,10 @@ public class ChampionTest {
         assertThat(emptyList, empty());
     }
 
+    @Test
+    public void 생성하고_값을넣은_list가_null이_아닌지_테스트(){
+        assertThat(championList,notNullValue());
+    }
     //notNullValue 활용한 테스트
     @Test
     public void notNullCheck() {
