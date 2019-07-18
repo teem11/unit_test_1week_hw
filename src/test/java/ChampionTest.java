@@ -10,7 +10,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertTrue;
 
-
 public class ChampionTest {
     private List<Champion> championList = new ArrayList<Champion>();
 
@@ -53,7 +52,6 @@ public class ChampionTest {
         String leagueName = null;
         assertThat(leagueName, nullValue());
     }
-
 
     //문자열 관련 테스트 anyOf, containsString, endWith
     @Test
@@ -122,6 +120,16 @@ public class ChampionTest {
         System.out.println("result ::" + filterdChampion);
         String champName = filterdChampion.get().getName();
         assertThat(champName, is("신짜오"));
+    }
+
+    @Test
+    public void shouldMidChampionIsVladimir(){
+        Optional<Champion> filterdChampion = championList.stream()
+                .filter(c -> c.getPosition().equals("미드"))
+                .findFirst();
+        System.out.println("result ::" + filterdChampion);
+        String champName = filterdChampion.get().getName();
+        assertThat(champName, is("블라디미르"));
     }
 
 }
