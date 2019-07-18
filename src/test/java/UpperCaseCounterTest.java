@@ -10,9 +10,8 @@ public class UpperCaseCounterTest {
 
     private UpperCaseCounter upperCaseCounter = new UpperCaseCounter();
 
-    //null을 전달했을 때 0을 리턴하는지에 대한 테스트 작성
     @Test
-    public void getNumberOfUpperCaseCharactersInString_return_0_for_null_input(){
+    public void null을_전달했을때_0을_리턴하는지에_대한_테스트(){
         String str = null;
 
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
@@ -22,9 +21,8 @@ public class UpperCaseCounterTest {
 //        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
     }
 
-    //빈값을 전달했을 때 0을 리턴하는지에 대한 테스트 작성
     @Test
-    public void getNumberOfUpperCaseCharactersInString_return_0_for_empty_input() {
+    public void 빈값을_전달했을때_0을_리턴하는지에_대한_테스트() {
         String str = "";
 
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
@@ -32,45 +30,36 @@ public class UpperCaseCounterTest {
 
     }
 
-    //대문자들이 포함된 문자열을 전달했을 때 카운팅된 숫자와 맞는지 검증하는 테스트 작성
     @Test
-    public void getNumberOfUpperCaseCharactersInString_return_10_for_ABCDEFGHIJ() {
+    public void 대문자들이_포함된_문자열을_전달했을때_카운팅된_숫자와_맞는지_검증하는_테스트() {
         String str = "ABCDEFGHIJ";
 
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
-
-        //assertTrue로 맞는 테스트 코드 작성
-        //assertTrue(numberOfUpperCaseCharactersInString == 10);
-        //assertFalse(numberOfUpperCaseCharactersInString == 9);
-        //assertFalse로 틀리는 값을 넣어 테스트 작성
-        //assertThat 단정문을 사용해서 True인 테스트 코드 작성
+        assertTrue(numberOfUpperCaseCharactersInString == 10);
+        assertFalse(numberOfUpperCaseCharactersInString == 9);
         assertThat(numberOfUpperCaseCharactersInString, is(10));
     }
 
-    //대소문자가 섞여 있을 때 정확히 카운팅 되는 지에 대한 테스트 코드 작성
+
     @Test
-    public void getNumberOfUpperCaseCharacterInString_return_6_for_ABCdefGHI(){
+    public void 대소문자가_섞여_있을때_정확히_카운팅_되는지에_대한_테스트(){
         String str = "ABCdefGHI";
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
-        //assertTrue로 맞는 테스트 코드 작성
-        //assertTrue(result == 6);
-        //assertFalse로 틀리는 값을 넣어 테스트 작성
-        //assertFalse(result == 9);
-        //assertThat 단정문을 사용해서 True인 테스트 코드 작성
+        assertTrue(result == 6);
+        assertFalse(result == 9);
         assertThat(result, is(6));
         System.out.println("result :: " + result);
     }
 
-    //잘못된 값을 참조했을 때 IndexOutOfBoundsException Exception이 발생하는지 테스트 코드 작성
+
     @Test(expected = IndexOutOfBoundsException.class)
-    public void shouldThrowExceptionWhenGetZeroIndex() {
+    public void 잘못된_값을_참조했을때_IndexOutOfBoundsException_Exception이_발생하는지_테스트() {
         new ArrayList<Object>().get(0);
     }
 
-    //해당 메소드가 제한된 시간내에 실행되는지에 대한 테스트 코드 작성 : timeout 사용
-    //두번째로 해당 메소드는 테스트 하지 않도록 어노테이션 추가 적용 해봅니다. Ignore
+    @Ignore
     @Test(timeout = 5000)
-    public void testShouldRunInLimitedTime() throws InterruptedException {
+    public void 메소드가_제한된_시간내에_실행되는지에_대한_테스트_코드() throws InterruptedException {
         Thread.sleep(4000);
         System.out.println("제한된 시간 내에 수행되면 테스트 Passed!");
     }

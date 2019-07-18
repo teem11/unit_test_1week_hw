@@ -34,7 +34,7 @@ public class ChampionTest {
 
     //List<String>을 생성하고 값이 비어 있는지를 테스트 empty()
     @Test
-    public void givenCollectionWhenEmptyCorrect() {
+    public void List_처음생성했을때_값이_비어있는지_테스트() {
         List<String> emptyList = new ArrayList<>();
         assertThat(emptyList, empty());
     }
