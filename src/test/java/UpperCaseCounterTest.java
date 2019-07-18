@@ -15,10 +15,7 @@ public class UpperCaseCounterTest {
         String str = null;
 
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
-        //System.out.println("result ::" + numberOfUpperCaseCharactersInString);
         assertTrue(numberOfUpperCaseCharactersInString == 0);
-
-//        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
     }
 
     @Test
@@ -27,19 +24,17 @@ public class UpperCaseCounterTest {
 
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
         assertTrue(numberOfUpperCaseCharactersInString == 0);
-
     }
 
     @Test
     public void 대문자들이_포함된_문자열을_전달했을때_카운팅된_숫자와_맞는지_검증하는_테스트() {
-        String str = "ABCDEFGHIJ";
+        String str = "ABCDeFGHIJ";
 
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
-        assertTrue(numberOfUpperCaseCharactersInString == 10);
-        assertFalse(numberOfUpperCaseCharactersInString == 9);
-        assertThat(numberOfUpperCaseCharactersInString, is(10));
+        assertTrue(numberOfUpperCaseCharactersInString == 9);
+        assertFalse(numberOfUpperCaseCharactersInString == 10);
+        assertThat(numberOfUpperCaseCharactersInString, is(9));
     }
-
 
     @Test
     public void 대소문자가_섞여_있을때_정확히_카운팅_되는지에_대한_테스트(){

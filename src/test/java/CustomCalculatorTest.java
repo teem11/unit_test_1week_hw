@@ -1,5 +1,3 @@
-
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -7,21 +5,21 @@ import static org.junit.Assert.*;
 
 public class CustomCalculatorTest {
 
-    private CustomCalculator customCalculator; //원본 클래스를 생성하는 것.
+    private CustomCalculator customCalculator;
 
     @Test
     public void 더하기_테스트() {
         customCalculator = new CustomCalculator();
-        int result = customCalculator.add(3323,2882);
-        assertThat(result, is(6205));
+        int result = customCalculator.add(-35,15);
+        assertThat(result, is(-20));
         System.out.println("result :: " + result);
     }
 
     @Test
     public void 빼기_테스트() {
         customCalculator = new CustomCalculator();
-        int result = customCalculator.subtract(23,10);
-        assertThat(result, is(13));
+        int result = customCalculator.subtract(-10,-10);
+        assertThat(result, is(0));
         System.out.println("result :: " + result);
     }
 
@@ -36,9 +34,8 @@ public class CustomCalculatorTest {
     @Test
     public void 나누기_테스트() {
         customCalculator = new CustomCalculator();
-        int result = customCalculator.divide(25,5);
-        /* 이곳에 테스트 코드를 작성하세요. */
-        assertThat(result, is(5));
+        int result = customCalculator.divide(-25,5);
+        assertThat(result, is(-5));
         System.out.println("result :: " + result);
     }
     @Test(expected = ArithmeticException.class)
