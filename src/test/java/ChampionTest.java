@@ -31,14 +31,17 @@ public class ChampionTest {
         championList.add(adcChamp);
         championList.add(supportChamp);
     }
-
-    //List<String>을 생성하고 값이 비어 있는지를 테스트 empty()
+    
     @Test
     public void List_처음생성했을때_값이_비어있는지_테스트() {
         List<String> emptyList = new ArrayList<>();
         assertThat(emptyList, empty());
     }
 
+    @Test
+    public void 생성하고_값을넣은_list가_null이_아닌지_테스트(){
+        assertThat(championList,notNullValue());
+    }
     //notNullValue 활용한 테스트
     @Test
     public void notNullCheck() {
