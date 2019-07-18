@@ -41,4 +41,9 @@ public class CustomCalculatorTest {
         assertThat(result, is(5));
         System.out.println("result :: " + result);
     }
+    @Test(expected = ArithmeticException.class)
+    public void 영으로_나누었을때_오류_테스트(){
+        customCalculator = new CustomCalculator();
+        int result = customCalculator.divide(25,0);
+    }
 }
