@@ -31,8 +31,7 @@ public class ChampionTest {
         championList.add(adcChamp);
         championList.add(supportChamp);
     }
-
-    //List<String>을 생성하고 값이 비어 있는지를 테스트 empty()
+    
     @Test
     public void List_처음생성했을때_값이_비어있는지_테스트() {
         List<String> emptyList = new ArrayList<>();
